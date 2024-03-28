@@ -33,9 +33,12 @@ namespace Terraria.ModLoader.Setup
 			// tModLoader
 			taskButtons[buttonDiffModLoader] = () => new DiffTask(this, "src/TerrariaNetCore", "src/tModLoader", "patches/tModLoader", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
 			taskButtons[buttonPatchModLoader] = () => new PatchTask(this, "src/TerrariaNetCore", "src/tModLoader", "patches/tModLoader", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
+			// Nitrate
+			taskButtons[buttonDiffNitrate] = () => new DiffTask(this, "src/tModLoader", "src/Nitrate", "nitrate-mod/patches", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
+			taskButtons[buttonPatchNitrate] = () => new PatchTask(this, "src/tModLoader", "src/Nitrate", "nitrate-mod/patches", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
 
 			taskButtons[buttonRegenSource] = () =>
-				new RegenSourceTask(this, new[] { buttonPatchTerraria, buttonPatchTerrariaNetCore, buttonPatchModLoader }
+				new RegenSourceTask(this, new[] { buttonPatchTerraria, buttonPatchTerrariaNetCore, buttonPatchModLoader, buttonPatchNitrate }
 					.Select(b => taskButtons[b]()).ToArray());
 
 			taskButtons[buttonSetup] = () =>

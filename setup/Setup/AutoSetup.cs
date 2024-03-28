@@ -32,9 +32,10 @@ namespace Terraria.ModLoader.Setup
 			Func<SetupOperation> buttonPatchTerraria = () => new PatchTask(this, "src/decompiled", "src/Terraria", "patches/Terraria", new ProgramSetting<DateTime>("TerrariaDiffCutoff"));
 			Func<SetupOperation> buttonPatchTerrariaNetCore = () => new PatchTask(this, "src/Terraria", "src/TerrariaNetCore", "patches/TerrariaNetCore", new ProgramSetting<DateTime>("TerrariaNetCoreDiffCutoff"));
 			Func<SetupOperation> buttonPatchModLoader = () => new PatchTask(this, "src/TerrariaNetCore", "src/tModLoader", "patches/tModLoader", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
+			Func<SetupOperation> buttonPatchNitrate = () => new PatchTask(this, "src/tModLoader", "src/Nitrate", "nitrate-mod/patches", new ProgramSetting<DateTime>("tModLoaderDiffCutoff"));
 
 			Func<SetupOperation> buttonRegenSource = () =>
-				new RegenSourceTask(this, new[] { buttonPatchTerraria, buttonPatchTerrariaNetCore, buttonPatchModLoader }
+				new RegenSourceTask(this, new[] { buttonPatchTerraria, buttonPatchTerrariaNetCore, buttonPatchModLoader, buttonPatchNitrate }
 					.Select(b => b()).ToArray());
 			Func<SetupOperation> task = () =>
 				new SetupTask(this, new[] { buttonDecompile, buttonRegenSource }

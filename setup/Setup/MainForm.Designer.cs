@@ -20,386 +20,393 @@ namespace Terraria.ModLoader.Setup
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.buttonSetup = new System.Windows.Forms.Button();
-            this.buttonDecompile = new System.Windows.Forms.Button();
-            this.buttonDiffTerraria = new System.Windows.Forms.Button();
-            this.buttonPatchTerraria = new System.Windows.Forms.Button();
-            this.buttonPatchModLoader = new System.Windows.Forms.Button();
-            this.buttonDiffModLoader = new System.Windows.Forms.Button();
-            this.toolTipButtons = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonRegenSource = new System.Windows.Forms.Button();
-            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.menuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemTerraria = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemTmlPath = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetTimeStampOptimizationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatDecompiledOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.decompileServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hookGenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.simplifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.offsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fuzzyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonDiffTerrariaNetCore = new System.Windows.Forms.Button();
-            this.buttonPatchTerrariaNetCore = new System.Windows.Forms.Button();
-            this.labelWorkingDirectory = new System.Windows.Forms.Label();
-            this.mainMenuStrip.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Enabled = false;
-            this.buttonCancel.Location = new System.Drawing.Point(158, 388);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(96, 27);
-            this.buttonCancel.TabIndex = 6;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // progressBar
-            // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(14, 354);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(379, 27);
-            this.progressBar.TabIndex = 1;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelStatus.Location = new System.Drawing.Point(14, 212);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(377, 138);
-            this.labelStatus.TabIndex = 3;
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // buttonSetup
-            // 
-            this.buttonSetup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonSetup.Location = new System.Drawing.Point(52, 48);
-            this.buttonSetup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonSetup.Name = "buttonSetup";
-            this.buttonSetup.Size = new System.Drawing.Size(150, 27);
-            this.buttonSetup.TabIndex = 0;
-            this.buttonSetup.Text = "Setup";
-            this.toolTipButtons.SetToolTip(this.buttonSetup, "Complete environment setup for working on tModLoader source\r\nEquivalent to Decomp" +
-        "ile+Patch+SetupDebug\r\nEdit the source in src/tModLoader then run Diff tModLoader" +
-        " and commit the /patches folder");
-            this.buttonSetup.UseVisualStyleBackColor = true;
-            this.buttonSetup.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonDecompile
-            // 
-            this.buttonDecompile.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDecompile.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonDecompile.Location = new System.Drawing.Point(210, 48);
-            this.buttonDecompile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonDecompile.Name = "buttonDecompile";
-            this.buttonDecompile.Size = new System.Drawing.Size(150, 27);
-            this.buttonDecompile.TabIndex = 1;
-            this.buttonDecompile.Text = "Decompile";
-            this.toolTipButtons.SetToolTip(this.buttonDecompile, "Uses ILSpy to decompile Terraria\r\nAlso decompiles server classes not included in " +
-        "the client binary\r\nOutputs to src/decompiled");
-            this.buttonDecompile.UseVisualStyleBackColor = true;
-            this.buttonDecompile.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonDiffTerraria
-            // 
-            this.buttonDiffTerraria.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDiffTerraria.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonDiffTerraria.Location = new System.Drawing.Point(52, 82);
-            this.buttonDiffTerraria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonDiffTerraria.Name = "buttonDiffTerraria";
-            this.buttonDiffTerraria.Size = new System.Drawing.Size(150, 27);
-            this.buttonDiffTerraria.TabIndex = 4;
-            this.buttonDiffTerraria.Text = "Diff Terraria";
-            this.toolTipButtons.SetToolTip(this.buttonDiffTerraria, "Recalculates the Terraria patches\r\nDiffs the src/Terraria directory\r\nUsed for fix" +
-        "ing decompilation errors\r\n");
-            this.buttonDiffTerraria.UseVisualStyleBackColor = true;
-            this.buttonDiffTerraria.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonPatchTerraria
-            // 
-            this.buttonPatchTerraria.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPatchTerraria.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonPatchTerraria.Location = new System.Drawing.Point(210, 82);
-            this.buttonPatchTerraria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPatchTerraria.Name = "buttonPatchTerraria";
-            this.buttonPatchTerraria.Size = new System.Drawing.Size(150, 27);
-            this.buttonPatchTerraria.TabIndex = 2;
-            this.buttonPatchTerraria.Text = "Patch Terraria";
-            this.toolTipButtons.SetToolTip(this.buttonPatchTerraria, "Applies patches to fix decompile errors\r\nLeaves functionality unchanged\r\nPatched " +
-        "source is located in src/Terraria");
-            this.buttonPatchTerraria.UseVisualStyleBackColor = true;
-            this.buttonPatchTerraria.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonPatchModLoader
-            // 
-            this.buttonPatchModLoader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPatchModLoader.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonPatchModLoader.Location = new System.Drawing.Point(210, 149);
-            this.buttonPatchModLoader.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPatchModLoader.Name = "buttonPatchModLoader";
-            this.buttonPatchModLoader.Size = new System.Drawing.Size(150, 27);
-            this.buttonPatchModLoader.TabIndex = 3;
-            this.buttonPatchModLoader.Text = "Patch tModLoader";
-            this.toolTipButtons.SetToolTip(this.buttonPatchModLoader, "Applies tModLoader patches to Terraria\r\nEdit the source code in src/tModLoader af" +
-        "ter this phase\r\nInternally formats the Terraria sources before patching");
-            this.buttonPatchModLoader.UseVisualStyleBackColor = true;
-            this.buttonPatchModLoader.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonDiffModLoader
-            // 
-            this.buttonDiffModLoader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDiffModLoader.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonDiffModLoader.Location = new System.Drawing.Point(52, 149);
-            this.buttonDiffModLoader.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonDiffModLoader.Name = "buttonDiffModLoader";
-            this.buttonDiffModLoader.Size = new System.Drawing.Size(150, 27);
-            this.buttonDiffModLoader.TabIndex = 5;
-            this.buttonDiffModLoader.Text = "Diff tModLoader";
-            this.toolTipButtons.SetToolTip(this.buttonDiffModLoader, resources.GetString("buttonDiffModLoader.ToolTip"));
-            this.buttonDiffModLoader.UseVisualStyleBackColor = true;
-            this.buttonDiffModLoader.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // toolTipButtons
-            // 
-            this.toolTipButtons.AutomaticDelay = 200;
-            this.toolTipButtons.AutoPopDelay = 0;
-            this.toolTipButtons.InitialDelay = 200;
-            this.toolTipButtons.ReshowDelay = 40;
-            this.toolTipButtons.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipButtons_Popup);
-            // 
-            // buttonRegenSource
-            // 
-            this.buttonRegenSource.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonRegenSource.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonRegenSource.Location = new System.Drawing.Point(52, 182);
-            this.buttonRegenSource.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRegenSource.Name = "buttonRegenSource";
-            this.buttonRegenSource.Size = new System.Drawing.Size(308, 27);
-            this.buttonRegenSource.TabIndex = 3;
-            this.buttonRegenSource.Text = "Regenerate Source";
-            this.toolTipButtons.SetToolTip(this.buttonRegenSource, "Regenerates all the source files\r\nUse this after pulling from the repo\r\nEquivalen" +
-        "t to Setup without Decompile");
-            this.buttonRegenSource.UseVisualStyleBackColor = true;
-            this.buttonRegenSource.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // mainMenuStrip
-            // 
-            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemOptions,
-            this.toolsToolStripMenuItem,
-            this.patchToolStripMenuItem});
-            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mainMenuStrip.Size = new System.Drawing.Size(407, 24);
-            this.mainMenuStrip.TabIndex = 9;
-            this.mainMenuStrip.Text = "menuStrip1";
-            this.mainMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mainMenuStrip_ItemClicked);
-            // 
-            // menuItemOptions
-            // 
-            this.menuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemTerraria,
-            this.menuItemTmlPath,
-            this.resetTimeStampOptimizationsToolStripMenuItem,
-            this.formatDecompiledOutputToolStripMenuItem});
-            this.menuItemOptions.Name = "menuItemOptions";
-            this.menuItemOptions.Size = new System.Drawing.Size(61, 20);
-            this.menuItemOptions.Text = "Options";
-            // 
-            // menuItemTerraria
-            // 
-            this.menuItemTerraria.Name = "menuItemTerraria";
-            this.menuItemTerraria.Size = new System.Drawing.Size(268, 22);
-            this.menuItemTerraria.Text = "Select Terraria";
-            this.menuItemTerraria.Click += new System.EventHandler(this.menuItemTerraria_Click);
-            // 
-            // menuItemTmlPath
-            // 
-            this.menuItemTmlPath.Name = "menuItemTmlPath";
-            this.menuItemTmlPath.Size = new System.Drawing.Size(268, 22);
-            this.menuItemTmlPath.Text = "Select Custom TML Output Directory";
-            this.menuItemTmlPath.Click += new System.EventHandler(this.menuItemTmlPath_Click);
-            // 
-            // resetTimeStampOptimizationsToolStripMenuItem
-            // 
-            this.resetTimeStampOptimizationsToolStripMenuItem.Name = "resetTimeStampOptimizationsToolStripMenuItem";
-            this.resetTimeStampOptimizationsToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
-            this.resetTimeStampOptimizationsToolStripMenuItem.Text = "Reset TimeStamp Optimizations";
-            this.resetTimeStampOptimizationsToolStripMenuItem.Click += new System.EventHandler(this.menuItemResetTimeStampOptmizations_Click);
-            // 
-            // formatDecompiledOutputToolStripMenuItem
-            // 
-            this.formatDecompiledOutputToolStripMenuItem.Name = "formatDecompiledOutputToolStripMenuItem";
-            this.formatDecompiledOutputToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
-            this.formatDecompiledOutputToolStripMenuItem.Text = "Format Decompiled Output";
-            this.formatDecompiledOutputToolStripMenuItem.Click += new System.EventHandler(this.formatDecompiledOutputToolStripMenuItem_Click);
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.decompileServerToolStripMenuItem,
-            this.formatCodeToolStripMenuItem,
-            this.hookGenToolStripMenuItem,
-            this.simplifierToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // decompileServerToolStripMenuItem
-            // 
-            this.decompileServerToolStripMenuItem.Name = "decompileServerToolStripMenuItem";
-            this.decompileServerToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.decompileServerToolStripMenuItem.Text = "Decompile Server";
-            this.decompileServerToolStripMenuItem.Click += new System.EventHandler(this.menuItemDecompileServer_Click);
-            // 
-            // formatCodeToolStripMenuItem
-            // 
-            this.formatCodeToolStripMenuItem.Name = "formatCodeToolStripMenuItem";
-            this.formatCodeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.formatCodeToolStripMenuItem.Text = "Formatter";
-            this.formatCodeToolStripMenuItem.Click += new System.EventHandler(this.menuItemFormatCode_Click);
-            // 
-            // hookGenToolStripMenuItem
-            // 
-            this.hookGenToolStripMenuItem.Name = "hookGenToolStripMenuItem";
-            this.hookGenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.hookGenToolStripMenuItem.Text = "HookGen";
-            this.hookGenToolStripMenuItem.Click += new System.EventHandler(this.menuItemHookGen_Click);
-            // 
-            // simplifierToolStripMenuItem
-            // 
-            this.simplifierToolStripMenuItem.Name = "simplifierToolStripMenuItem";
-            this.simplifierToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.simplifierToolStripMenuItem.Text = "Simplifier";
-            this.simplifierToolStripMenuItem.Click += new System.EventHandler(this.simplifierToolStripMenuItem_Click);
-            // 
-            // patchToolStripMenuItem
-            // 
-            this.patchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exactToolStripMenuItem,
-            this.offsetToolStripMenuItem,
-            this.fuzzyToolStripMenuItem});
-            this.patchToolStripMenuItem.Name = "patchToolStripMenuItem";
-            this.patchToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.patchToolStripMenuItem.Text = "Patch";
-            // 
-            // exactToolStripMenuItem
-            // 
-            this.exactToolStripMenuItem.Name = "exactToolStripMenuItem";
-            this.exactToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.exactToolStripMenuItem.Text = "Exact";
-            this.exactToolStripMenuItem.Click += new System.EventHandler(this.exactToolStripMenuItem_Click);
-            // 
-            // offsetToolStripMenuItem
-            // 
-            this.offsetToolStripMenuItem.Name = "offsetToolStripMenuItem";
-            this.offsetToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.offsetToolStripMenuItem.Text = "Offset";
-            this.offsetToolStripMenuItem.Click += new System.EventHandler(this.offsetToolStripMenuItem_Click);
-            // 
-            // fuzzyToolStripMenuItem
-            // 
-            this.fuzzyToolStripMenuItem.Name = "fuzzyToolStripMenuItem";
-            this.fuzzyToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.fuzzyToolStripMenuItem.Text = "Fuzzy";
-            this.fuzzyToolStripMenuItem.Click += new System.EventHandler(this.fuzzyToolStripMenuItem_Click);
-            // 
-            // buttonDiffTerrariaNetCore
-            // 
-            this.buttonDiffTerrariaNetCore.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDiffTerrariaNetCore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonDiffTerrariaNetCore.Location = new System.Drawing.Point(52, 116);
-            this.buttonDiffTerrariaNetCore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonDiffTerrariaNetCore.Name = "buttonDiffTerrariaNetCore";
-            this.buttonDiffTerrariaNetCore.Size = new System.Drawing.Size(150, 27);
-            this.buttonDiffTerrariaNetCore.TabIndex = 10;
-            this.buttonDiffTerrariaNetCore.Text = "Diff TerrariaNetCore";
-            this.toolTipButtons.SetToolTip(this.buttonDiffTerrariaNetCore, "Recalculates the Terraria patches\r\nDiffs the src/Terraria directory\r\nUsed for fix" +
-        "ing decompilation errors\r\n");
-            this.buttonDiffTerrariaNetCore.UseVisualStyleBackColor = true;
-            this.buttonDiffTerrariaNetCore.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // buttonPatchTerrariaNetCore
-            // 
-            this.buttonPatchTerrariaNetCore.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonPatchTerrariaNetCore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonPatchTerrariaNetCore.Location = new System.Drawing.Point(210, 116);
-            this.buttonPatchTerrariaNetCore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPatchTerrariaNetCore.Name = "buttonPatchTerrariaNetCore";
-            this.buttonPatchTerrariaNetCore.Size = new System.Drawing.Size(150, 27);
-            this.buttonPatchTerrariaNetCore.TabIndex = 11;
-            this.buttonPatchTerrariaNetCore.Text = "Patch TerrariaNetCore";
-            this.toolTipButtons.SetToolTip(this.buttonPatchTerrariaNetCore, "Applies patches to fix decompile errors\r\nLeaves functionality unchanged\r\nPatched " +
-        "source is located in src/Terraria");
-            this.buttonPatchTerrariaNetCore.UseVisualStyleBackColor = true;
-            this.buttonPatchTerrariaNetCore.Click += new System.EventHandler(this.buttonTask_Click);
-            // 
-            // labelWorkingDirectory
-            // 
-            this.labelWorkingDirectory.AutoSize = true;
-            this.labelWorkingDirectory.Location = new System.Drawing.Point(12, 30);
-            this.labelWorkingDirectory.Name = "labelWorkingDirectory";
-            this.labelWorkingDirectory.Size = new System.Drawing.Size(106, 15);
-            this.labelWorkingDirectory.TabIndex = 12;
-            this.labelWorkingDirectory.Text = "Working Directory Here";
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 428);
-            this.Controls.Add(this.labelWorkingDirectory);
-            this.Controls.Add(this.buttonPatchTerrariaNetCore);
-            this.Controls.Add(this.buttonDiffTerrariaNetCore);
-            this.Controls.Add(this.buttonDiffModLoader);
-            this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.buttonDiffTerraria);
-            this.Controls.Add(this.buttonRegenSource);
-            this.Controls.Add(this.buttonPatchModLoader);
-            this.Controls.Add(this.buttonPatchTerraria);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonDecompile);
-            this.Controls.Add(this.buttonSetup);
-            this.Controls.Add(this.mainMenuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.mainMenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "MainForm";
-            this.Text = "tModLoader Dev Setup";
-            this.mainMenuStrip.ResumeLayout(false);
-            this.mainMenuStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+			var resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			buttonCancel = new System.Windows.Forms.Button();
+			progressBar = new System.Windows.Forms.ProgressBar();
+			labelStatus = new System.Windows.Forms.Label();
+			buttonSetup = new System.Windows.Forms.Button();
+			buttonDecompile = new System.Windows.Forms.Button();
+			buttonDiffTerraria = new System.Windows.Forms.Button();
+			buttonPatchTerraria = new System.Windows.Forms.Button();
+			buttonPatchModLoader = new System.Windows.Forms.Button();
+			buttonDiffModLoader = new System.Windows.Forms.Button();
+			buttonPatchNitrate = new System.Windows.Forms.Button();
+			buttonDiffNitrate = new System.Windows.Forms.Button();
+			toolTipButtons = new System.Windows.Forms.ToolTip(components);
+			buttonRegenSource = new System.Windows.Forms.Button();
+			buttonDiffTerrariaNetCore = new System.Windows.Forms.Button();
+			buttonPatchTerrariaNetCore = new System.Windows.Forms.Button();
+			mainMenuStrip = new System.Windows.Forms.MenuStrip();
+			menuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
+			menuItemTerraria = new System.Windows.Forms.ToolStripMenuItem();
+			menuItemTmlPath = new System.Windows.Forms.ToolStripMenuItem();
+			resetTimeStampOptimizationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			formatDecompiledOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			decompileServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			formatCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			hookGenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			simplifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			patchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			exactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			offsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			fuzzyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			labelWorkingDirectory = new System.Windows.Forms.Label();
+			mainMenuStrip.SuspendLayout();
+			SuspendLayout();
+			// 
+			// buttonCancel
+			// 
+			buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonCancel.Enabled = false;
+			buttonCancel.Location = new System.Drawing.Point(158, 486);
+			buttonCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonCancel.Name = "buttonCancel";
+			buttonCancel.Size = new System.Drawing.Size(96, 27);
+			buttonCancel.TabIndex = 6;
+			buttonCancel.Text = "Cancel";
+			buttonCancel.UseVisualStyleBackColor = true;
+			buttonCancel.Click += buttonCancel_Click;
+			// 
+			// progressBar
+			// 
+			progressBar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+			progressBar.Location = new System.Drawing.Point(14, 452);
+			progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			progressBar.Name = "progressBar";
+			progressBar.Size = new System.Drawing.Size(379, 27);
+			progressBar.TabIndex = 1;
+			// 
+			// labelStatus
+			// 
+			labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+			labelStatus.Location = new System.Drawing.Point(14, 246);
+			labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			labelStatus.Name = "labelStatus";
+			labelStatus.Size = new System.Drawing.Size(377, 202);
+			labelStatus.TabIndex = 3;
+			labelStatus.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+			// 
+			// buttonSetup
+			// 
+			buttonSetup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonSetup.Location = new System.Drawing.Point(52, 48);
+			buttonSetup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonSetup.Name = "buttonSetup";
+			buttonSetup.Size = new System.Drawing.Size(150, 27);
+			buttonSetup.TabIndex = 0;
+			buttonSetup.Text = "Setup";
+			toolTipButtons.SetToolTip(buttonSetup, "Complete environment setup for working on tModLoader source\r\nEquivalent to Decompile+Patch+SetupDebug\r\nEdit the source in src/tModLoader then run Diff tModLoader and commit the /patches folder");
+			buttonSetup.UseVisualStyleBackColor = true;
+			buttonSetup.Click += buttonTask_Click;
+			// 
+			// buttonDecompile
+			// 
+			buttonDecompile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonDecompile.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonDecompile.Location = new System.Drawing.Point(210, 48);
+			buttonDecompile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonDecompile.Name = "buttonDecompile";
+			buttonDecompile.Size = new System.Drawing.Size(150, 27);
+			buttonDecompile.TabIndex = 1;
+			buttonDecompile.Text = "Decompile";
+			toolTipButtons.SetToolTip(buttonDecompile, "Uses ILSpy to decompile Terraria\r\nAlso decompiles server classes not included in the client binary\r\nOutputs to src/decompiled");
+			buttonDecompile.UseVisualStyleBackColor = true;
+			buttonDecompile.Click += buttonTask_Click;
+			// 
+			// buttonDiffTerraria
+			// 
+			buttonDiffTerraria.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonDiffTerraria.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonDiffTerraria.Location = new System.Drawing.Point(52, 82);
+			buttonDiffTerraria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonDiffTerraria.Name = "buttonDiffTerraria";
+			buttonDiffTerraria.Size = new System.Drawing.Size(150, 27);
+			buttonDiffTerraria.TabIndex = 2;
+			buttonDiffTerraria.Text = "Diff Terraria";
+			toolTipButtons.SetToolTip(buttonDiffTerraria, "Recalculates the Terraria patches\r\nDiffs the src/Terraria directory\r\nUsed for fixing decompilation errors\r\n");
+			buttonDiffTerraria.UseVisualStyleBackColor = true;
+			buttonDiffTerraria.Click += buttonTask_Click;
+			// 
+			// buttonPatchTerraria
+			// 
+			buttonPatchTerraria.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonPatchTerraria.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonPatchTerraria.Location = new System.Drawing.Point(210, 82);
+			buttonPatchTerraria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonPatchTerraria.Name = "buttonPatchTerraria";
+			buttonPatchTerraria.Size = new System.Drawing.Size(150, 27);
+			buttonPatchTerraria.TabIndex = 3;
+			buttonPatchTerraria.Text = "Patch Terraria";
+			toolTipButtons.SetToolTip(buttonPatchTerraria, "Applies patches to fix decompile errors\r\nLeaves functionality unchanged\r\nPatched source is located in src/Terraria");
+			buttonPatchTerraria.UseVisualStyleBackColor = true;
+			buttonPatchTerraria.Click += buttonTask_Click;
+			// 
+			// buttonPatchModLoader
+			// 
+			buttonPatchModLoader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonPatchModLoader.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonPatchModLoader.Location = new System.Drawing.Point(210, 149);
+			buttonPatchModLoader.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonPatchModLoader.Name = "buttonPatchModLoader";
+			buttonPatchModLoader.Size = new System.Drawing.Size(150, 27);
+			buttonPatchModLoader.TabIndex = 6;
+			buttonPatchModLoader.Text = "Patch tModLoader";
+			toolTipButtons.SetToolTip(buttonPatchModLoader, "Applies tModLoader patches to Terraria\r\nEdit the source code in src/tModLoader after this phase\r\nInternally formats the Terraria sources before patching");
+			buttonPatchModLoader.UseVisualStyleBackColor = true;
+			buttonPatchModLoader.Click += buttonTask_Click;
+			// 
+			// buttonDiffModLoader
+			// 
+			buttonDiffModLoader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonDiffModLoader.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonDiffModLoader.Location = new System.Drawing.Point(52, 149);
+			buttonDiffModLoader.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonDiffModLoader.Name = "buttonDiffModLoader";
+			buttonDiffModLoader.Size = new System.Drawing.Size(150, 27);
+			buttonDiffModLoader.TabIndex = 7;
+			buttonDiffModLoader.Text = "Diff tModLoader";
+			toolTipButtons.SetToolTip(buttonDiffModLoader, resources.GetString("buttonDiffModLoader.ToolTip"));
+			buttonDiffModLoader.UseVisualStyleBackColor = true;
+			buttonDiffModLoader.Click += buttonTask_Click;
+			// 
+			// buttonPatchNitrate
+			// 
+			buttonPatchNitrate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonPatchNitrate.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonPatchNitrate.Location = new System.Drawing.Point(210, 181);
+			buttonPatchNitrate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonPatchNitrate.Name = "buttonPatchNitrate";
+			buttonPatchNitrate.Size = new System.Drawing.Size(150, 27);
+			buttonPatchNitrate.TabIndex = 8;
+			buttonPatchNitrate.Text = "Patch Nitrate";
+			toolTipButtons.SetToolTip(buttonPatchNitrate, "Apply Nitrate patches");
+			buttonPatchNitrate.UseVisualStyleBackColor = true;
+			buttonPatchNitrate.Click += buttonTask_Click;
+			// 
+			// buttonDiffNitrate
+			// 
+			buttonDiffNitrate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonDiffNitrate.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonDiffNitrate.Location = new System.Drawing.Point(52, 181);
+			buttonDiffNitrate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonDiffNitrate.Name = "buttonDiffNitrate";
+			buttonDiffNitrate.Size = new System.Drawing.Size(150, 27);
+			buttonDiffNitrate.TabIndex = 9;
+			buttonDiffNitrate.Text = "Diff Nitrate";
+			toolTipButtons.SetToolTip(buttonDiffNitrate, "Diff Nitrate patches");
+			buttonDiffNitrate.UseVisualStyleBackColor = true;
+			buttonDiffNitrate.Click += buttonTask_Click;
+			// 
+			// toolTipButtons
+			// 
+			toolTipButtons.AutomaticDelay = 200;
+			toolTipButtons.AutoPopDelay = 0;
+			toolTipButtons.InitialDelay = 200;
+			toolTipButtons.ReshowDelay = 40;
+			toolTipButtons.Popup += toolTipButtons_Popup;
+			// 
+			// buttonRegenSource
+			// 
+			buttonRegenSource.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonRegenSource.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonRegenSource.Location = new System.Drawing.Point(52, 216);
+			buttonRegenSource.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonRegenSource.Name = "buttonRegenSource";
+			buttonRegenSource.Size = new System.Drawing.Size(308, 27);
+			buttonRegenSource.TabIndex = 3;
+			buttonRegenSource.Text = "Regenerate Source";
+			toolTipButtons.SetToolTip(buttonRegenSource, "Regenerates all the source files\r\nUse this after pulling from the repo\r\nEquivalent to Setup without Decompile");
+			buttonRegenSource.UseVisualStyleBackColor = true;
+			buttonRegenSource.Click += buttonTask_Click;
+			// 
+			// buttonDiffTerrariaNetCore
+			// 
+			buttonDiffTerrariaNetCore.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonDiffTerrariaNetCore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonDiffTerrariaNetCore.Location = new System.Drawing.Point(52, 116);
+			buttonDiffTerrariaNetCore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonDiffTerrariaNetCore.Name = "buttonDiffTerrariaNetCore";
+			buttonDiffTerrariaNetCore.Size = new System.Drawing.Size(150, 27);
+			buttonDiffTerrariaNetCore.TabIndex = 4;
+			buttonDiffTerrariaNetCore.Text = "Diff TerrariaNetCore";
+			toolTipButtons.SetToolTip(buttonDiffTerrariaNetCore, "Recalculates the Terraria patches\r\nDiffs the src/Terraria directory\r\nUsed for fixing decompilation errors\r\n");
+			buttonDiffTerrariaNetCore.UseVisualStyleBackColor = true;
+			buttonDiffTerrariaNetCore.Click += buttonTask_Click;
+			// 
+			// buttonPatchTerrariaNetCore
+			// 
+			buttonPatchTerrariaNetCore.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			buttonPatchTerrariaNetCore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			buttonPatchTerrariaNetCore.Location = new System.Drawing.Point(210, 116);
+			buttonPatchTerrariaNetCore.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			buttonPatchTerrariaNetCore.Name = "buttonPatchTerrariaNetCore";
+			buttonPatchTerrariaNetCore.Size = new System.Drawing.Size(150, 27);
+			buttonPatchTerrariaNetCore.TabIndex = 5;
+			buttonPatchTerrariaNetCore.Text = "Patch TerrariaNetCore";
+			toolTipButtons.SetToolTip(buttonPatchTerrariaNetCore, "Applies patches to fix decompile errors\r\nLeaves functionality unchanged\r\nPatched source is located in src/Terraria");
+			buttonPatchTerrariaNetCore.UseVisualStyleBackColor = true;
+			buttonPatchTerrariaNetCore.Click += buttonTask_Click;
+			// 
+			// mainMenuStrip
+			// 
+			mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { menuItemOptions, toolsToolStripMenuItem, patchToolStripMenuItem });
+			mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+			mainMenuStrip.Name = "mainMenuStrip";
+			mainMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+			mainMenuStrip.Size = new System.Drawing.Size(407, 24);
+			mainMenuStrip.TabIndex = 9;
+			mainMenuStrip.Text = "menuStrip1";
+			mainMenuStrip.ItemClicked += mainMenuStrip_ItemClicked;
+			// 
+			// menuItemOptions
+			// 
+			menuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { menuItemTerraria, menuItemTmlPath, resetTimeStampOptimizationsToolStripMenuItem, formatDecompiledOutputToolStripMenuItem });
+			menuItemOptions.Name = "menuItemOptions";
+			menuItemOptions.Size = new System.Drawing.Size(61, 20);
+			menuItemOptions.Text = "Options";
+			// 
+			// menuItemTerraria
+			// 
+			menuItemTerraria.Name = "menuItemTerraria";
+			menuItemTerraria.Size = new System.Drawing.Size(268, 22);
+			menuItemTerraria.Text = "Select Terraria";
+			menuItemTerraria.Click += menuItemTerraria_Click;
+			// 
+			// menuItemTmlPath
+			// 
+			menuItemTmlPath.Name = "menuItemTmlPath";
+			menuItemTmlPath.Size = new System.Drawing.Size(268, 22);
+			menuItemTmlPath.Text = "Select Custom TML Output Directory";
+			menuItemTmlPath.Click += menuItemTmlPath_Click;
+			// 
+			// resetTimeStampOptimizationsToolStripMenuItem
+			// 
+			resetTimeStampOptimizationsToolStripMenuItem.Name = "resetTimeStampOptimizationsToolStripMenuItem";
+			resetTimeStampOptimizationsToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
+			resetTimeStampOptimizationsToolStripMenuItem.Text = "Reset TimeStamp Optimizations";
+			resetTimeStampOptimizationsToolStripMenuItem.Click += menuItemResetTimeStampOptmizations_Click;
+			// 
+			// formatDecompiledOutputToolStripMenuItem
+			// 
+			formatDecompiledOutputToolStripMenuItem.Name = "formatDecompiledOutputToolStripMenuItem";
+			formatDecompiledOutputToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
+			formatDecompiledOutputToolStripMenuItem.Text = "Format Decompiled Output";
+			formatDecompiledOutputToolStripMenuItem.Click += formatDecompiledOutputToolStripMenuItem_Click;
+			// 
+			// toolsToolStripMenuItem
+			// 
+			toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { decompileServerToolStripMenuItem, formatCodeToolStripMenuItem, hookGenToolStripMenuItem, simplifierToolStripMenuItem });
+			toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+			toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+			toolsToolStripMenuItem.Text = "Tools";
+			// 
+			// decompileServerToolStripMenuItem
+			// 
+			decompileServerToolStripMenuItem.Name = "decompileServerToolStripMenuItem";
+			decompileServerToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			decompileServerToolStripMenuItem.Text = "Decompile Server";
+			decompileServerToolStripMenuItem.Click += menuItemDecompileServer_Click;
+			// 
+			// formatCodeToolStripMenuItem
+			// 
+			formatCodeToolStripMenuItem.Name = "formatCodeToolStripMenuItem";
+			formatCodeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			formatCodeToolStripMenuItem.Text = "Formatter";
+			formatCodeToolStripMenuItem.Click += menuItemFormatCode_Click;
+			// 
+			// hookGenToolStripMenuItem
+			// 
+			hookGenToolStripMenuItem.Name = "hookGenToolStripMenuItem";
+			hookGenToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			hookGenToolStripMenuItem.Text = "HookGen";
+			hookGenToolStripMenuItem.Click += menuItemHookGen_Click;
+			// 
+			// simplifierToolStripMenuItem
+			// 
+			simplifierToolStripMenuItem.Name = "simplifierToolStripMenuItem";
+			simplifierToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			simplifierToolStripMenuItem.Text = "Simplifier";
+			simplifierToolStripMenuItem.Click += simplifierToolStripMenuItem_Click;
+			// 
+			// patchToolStripMenuItem
+			// 
+			patchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exactToolStripMenuItem, offsetToolStripMenuItem, fuzzyToolStripMenuItem });
+			patchToolStripMenuItem.Name = "patchToolStripMenuItem";
+			patchToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+			patchToolStripMenuItem.Text = "Patch";
+			// 
+			// exactToolStripMenuItem
+			// 
+			exactToolStripMenuItem.Name = "exactToolStripMenuItem";
+			exactToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+			exactToolStripMenuItem.Text = "Exact";
+			exactToolStripMenuItem.Click += exactToolStripMenuItem_Click;
+			// 
+			// offsetToolStripMenuItem
+			// 
+			offsetToolStripMenuItem.Name = "offsetToolStripMenuItem";
+			offsetToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+			offsetToolStripMenuItem.Text = "Offset";
+			offsetToolStripMenuItem.Click += offsetToolStripMenuItem_Click;
+			// 
+			// fuzzyToolStripMenuItem
+			// 
+			fuzzyToolStripMenuItem.Name = "fuzzyToolStripMenuItem";
+			fuzzyToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+			fuzzyToolStripMenuItem.Text = "Fuzzy";
+			fuzzyToolStripMenuItem.Click += fuzzyToolStripMenuItem_Click;
+			// 
+			// labelWorkingDirectory
+			// 
+			labelWorkingDirectory.AutoSize = true;
+			labelWorkingDirectory.Location = new System.Drawing.Point(12, 30);
+			labelWorkingDirectory.Name = "labelWorkingDirectory";
+			labelWorkingDirectory.Size = new System.Drawing.Size(131, 15);
+			labelWorkingDirectory.TabIndex = 12;
+			labelWorkingDirectory.Text = "Working Directory Here";
+			// 
+			// MainForm
+			// 
+			AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			ClientSize = new System.Drawing.Size(407, 526);
+			Controls.Add(labelWorkingDirectory);
+			Controls.Add(buttonPatchTerrariaNetCore);
+			Controls.Add(buttonDiffTerrariaNetCore);
+			Controls.Add(buttonDiffModLoader);
+			Controls.Add(buttonPatchNitrate);
+			Controls.Add(buttonDiffNitrate);
+			Controls.Add(labelStatus);
+			Controls.Add(buttonDiffTerraria);
+			Controls.Add(buttonRegenSource);
+			Controls.Add(buttonPatchModLoader);
+			Controls.Add(buttonPatchTerraria);
+			Controls.Add(progressBar);
+			Controls.Add(buttonCancel);
+			Controls.Add(buttonDecompile);
+			Controls.Add(buttonSetup);
+			Controls.Add(mainMenuStrip);
+			Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+			MainMenuStrip = mainMenuStrip;
+			Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			Name = "MainForm";
+			Text = "tModLoader Dev Setup";
+			mainMenuStrip.ResumeLayout(false);
+			mainMenuStrip.PerformLayout();
+			ResumeLayout(false);
+			PerformLayout();
+		}
 
 		#endregion
 
@@ -411,7 +418,9 @@ namespace Terraria.ModLoader.Setup
         private System.Windows.Forms.Button buttonDiffTerraria;
         private System.Windows.Forms.Button buttonPatchTerraria;
         private System.Windows.Forms.Button buttonPatchModLoader;
+        private System.Windows.Forms.Button buttonPatchNitrate;
         private System.Windows.Forms.Button buttonDiffModLoader;
+        private System.Windows.Forms.Button buttonDiffNitrate;
         private System.Windows.Forms.ToolTip toolTipButtons;
         private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuItemOptions;
