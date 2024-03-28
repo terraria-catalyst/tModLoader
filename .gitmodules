@@ -4,6 +4,3 @@
 [submodule "FNA"]
 	path = FNA
 	url = https://github.com/tModLoader/FNA.git
-[submodule "nitrate-mod"]
-	path = nitrate-mod
-	url = https://github.com/terraria-catalyst/nitrate-mod.git
