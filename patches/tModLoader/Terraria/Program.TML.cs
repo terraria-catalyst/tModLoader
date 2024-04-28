@@ -142,11 +142,21 @@ public static partial class Program
 			try {
 				var oneDrivePath1 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Microsoft\\OneDrive\\OneDrive.exe");
 				var oneDrivePath2 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Microsoft OneDrive\\OneDrive.exe");
-				if (File.Exists(oneDrivePath1))
-					System.Diagnostics.Process.Start(oneDrivePath1);
-				else if (File.Exists(oneDrivePath2))
-					System.Diagnostics.Process.Start(oneDrivePath2);
 
+				// passing /background to onedrive starts it with neither a tooltip popup nor a file explorer window
+				System.Diagnostics.ProcessStartInfo oneDriveInfo = new System.Diagnostics.ProcessStartInfo {
+					Arguments = "/background",
+					UseShellExecute = false
+				};
+
+				if (File.Exists(oneDrivePath1)) {
+					oneDriveInfo.FileName = oneDrivePath1;
+					System.Diagnostics.Process.Start(oneDriveInfo);
+				}
+				else if (File.Exists(oneDrivePath2)) {
+					oneDriveInfo.FileName = oneDrivePath2;
+					System.Diagnostics.Process.Start(oneDriveInfo);
+				}
 				Thread.Sleep(3000);
 			}
 			catch { }
@@ -299,6 +309,17 @@ public static partial class Program
 				bool controlledFolderAccessMightBeRelevant = (e is COMException || e is FileNotFoundException) && ControlledFolderAccessSupport.ControlledFolderAccessDetected;
 				
 				ErrorReporting.FatalExit("An error occurred migrating files and folders to the new structure" + (controlledFolderAccessMightBeRelevant ? $"\n\nControlled Folder Access feature detected, this might be the cause of this error.\n\nMake sure to add \"{Environment.ProcessPath}\" to the \"Allow an app through Controlled folder access\" menu found in the \"Ransomware protection\" menu." : ""), e);
+			}
+		}
+
+		if (Platform.IsWindows) {
+			// Fix #4168, for some reason sometimes Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) in PathService.GetStoragePath is returning a path with / and \, causing issues for some interactions. Bad -tmlsavedirectory or -savedirectory arguments could also cause this.
+			string SavePathFixed = SavePath.Replace('/', Path.DirectorySeparatorChar);
+			string SavePathSharedFixed = SavePathShared.Replace('/', Path.DirectorySeparatorChar);
+			if (SavePath != SavePathFixed || SavePathShared != SavePathSharedFixed) {
+				Logging.tML.Warn($"Saves paths had incorrect slashes somehow: \"{SavePath}\"=>\"{SavePathFixed}\", \"{SavePathShared}\"=>\"{SavePathSharedFixed}\"");
+				SavePath = SavePathFixed;
+				SavePathShared = SavePathSharedFixed;
 			}
 		}
 
